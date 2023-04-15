@@ -25,7 +25,7 @@ namespace Kanji_Paint_Project
             float Spacing = 100;
 
             // Draw horizontal
-            for (int i = 0; i < 5; i ++)
+            for (int i = 0; i < 5; i++)
             {
                 g.DrawLine(blackPen, 0.0F, Spacing, 1000.0f, Spacing);
                 Spacing += 100;
@@ -40,7 +40,7 @@ namespace Kanji_Paint_Project
 
         }
         public Form1()
-        { 
+        {
             // Sets up the drawable canvas
 
             InitializeComponent();
@@ -64,7 +64,14 @@ namespace Kanji_Paint_Project
         Bitmap bm;
         Graphics g;
         Point px, py;
-        
+
+        Bitmap[] btm = new Bitmap[100];
+        int test = 0;
+        int bitmapIndex = 0;
+        // This form will display the correct strokes in a different window.
+        Form form = new Form { Name = "Screenshot Displayer", Size = new System.Drawing.Size(800, 800), Location = new System.Drawing.Point(140, 170), Visible = true };
+        PictureBox P = new PictureBox();
+
         Pen p = new Pen(Color.White, 30);
         Pen tp = new Pen(Color.White, 5);
         KanjiStrokes KanjiArray = new KanjiStrokes();
@@ -158,8 +165,20 @@ namespace Kanji_Paint_Project
 
                 float xCord = e.X;
                 float yCord = e.Y;
+
+                
                 g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
                 g.DrawString(strokeCount.ToString(), myFont, myBrush, xCord, yCord);
+
+
+                btm[bitmapIndex] = bm.Clone(new Rectangle(0, 0, pic.Width, pic.Height), bm.PixelFormat);
+                bitmapIndex += 1;
+
+                
+                
+
+
+
             }
             if (index == 4)
             {
@@ -180,6 +199,18 @@ namespace Kanji_Paint_Project
                         float yCord = e.Y;
                         g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
                         g.DrawString(testYourselfStrokeCount.ToString(), myFontFinal, myBrush, xCord, yCord);
+
+                        // Displays original stroke in a different window.
+                        
+                        if (testYourselfStrokeCount > 1)
+                        {
+                            P.Image.Dispose();
+                        }
+                            
+                        P.Image = btm[testYourselfStrokeCount - 1];
+                        P.Dock = DockStyle.Fill;
+                        form.Controls.Add(P);
+                        form.Show();
                     }
                 }
                 
@@ -206,9 +237,15 @@ namespace Kanji_Paint_Project
             index = 3;
         }
 
+        bool isWindowOpen = false;
         private void TestYourselfButton_Click(object sender, EventArgs e)
         {
             index = 4;
+            if (form.IsHandleCreated == false)
+            {
+                form = new Form { Name = "Screenshot Displayer", Size = new System.Drawing.Size(800, 800), Location = new System.Drawing.Point(140, 170), Visible = true };
+            }
+
 
             // Clears the screen
             g.Clear(Color.White);
@@ -222,8 +259,9 @@ namespace Kanji_Paint_Project
             sfd.Filter = "Image(*.jpg)|*.jpg|(*.*|*.*";
             if (sfd.ShowDialog() == DialogResult.OK)
             {
-                Bitmap btm = bm.Clone(new Rectangle(0, 0, pic.Width, pic.Height), bm.PixelFormat);
-                btm.Save(sfd.FileName,ImageFormat.Jpeg);
+                btm[bitmapIndex] = bm.Clone(new Rectangle(0, 0, pic.Width, pic.Height), bm.PixelFormat);
+                btm[bitmapIndex].Save(sfd.FileName,ImageFormat.Jpeg);
+                
                 MessageBox.Show("Saved Successfully!");
             }
         }
@@ -234,6 +272,7 @@ namespace Kanji_Paint_Project
             drawGrid();
             strokeCount = 0;
             testYourselfStrokeCount = 0;
+            bitmapIndex = 0;
         }
 
         private void button1_Click(object sender, EventArgs e)
