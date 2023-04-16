@@ -29,152 +29,188 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.TestYourselfButton = new System.Windows.Forms.Button();
-            this.rst_btn = new System.Windows.Forms.Button();
-            this.btn_kanji = new System.Windows.Forms.Button();
-            this.btn_eraser = new System.Windows.Forms.Button();
-            this.btn_pencil = new System.Windows.Forms.Button();
-            this.SaveButton = new System.Windows.Forms.Button();
-            this.pic = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
-            this.SuspendLayout();
+            panel1 = new Panel();
+            openKanjiBtn = new Button();
+            kanjiDesktopSaveBtn = new Button();
+            TestYourselfButton = new Button();
+            rst_btn = new Button();
+            btn_kanji = new Button();
+            btn_eraser = new Button();
+            btn_pencil = new Button();
+            SaveButton = new Button();
+            pic = new PictureBox();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pic).BeginInit();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.panel1.Controls.Add(this.TestYourselfButton);
-            this.panel1.Controls.Add(this.rst_btn);
-            this.panel1.Controls.Add(this.btn_kanji);
-            this.panel1.Controls.Add(this.btn_eraser);
-            this.panel1.Controls.Add(this.btn_pencil);
-            this.panel1.Controls.Add(this.SaveButton);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(872, 81);
-            this.panel1.TabIndex = 0;
+            panel1.BackColor = SystemColors.GradientActiveCaption;
+            panel1.Controls.Add(openKanjiBtn);
+            panel1.Controls.Add(kanjiDesktopSaveBtn);
+            panel1.Controls.Add(TestYourselfButton);
+            panel1.Controls.Add(rst_btn);
+            panel1.Controls.Add(btn_kanji);
+            panel1.Controls.Add(btn_eraser);
+            panel1.Controls.Add(btn_pencil);
+            panel1.Controls.Add(SaveButton);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(4);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1017, 101);
+            panel1.TabIndex = 0;
+            // 
+            // openKanjiBtn
+            // 
+            openKanjiBtn.BackColor = Color.White;
+            openKanjiBtn.Location = new Point(745, 15);
+            openKanjiBtn.Margin = new Padding(4);
+            openKanjiBtn.Name = "openKanjiBtn";
+            openKanjiBtn.Size = new Size(105, 71);
+            openKanjiBtn.TabIndex = 12;
+            openKanjiBtn.Text = "Open Kanji Sets";
+            openKanjiBtn.UseVisualStyleBackColor = false;
+            openKanjiBtn.Click += button1_Click_1;
+            // 
+            // kanjiDesktopSaveBtn
+            // 
+            kanjiDesktopSaveBtn.BackColor = Color.White;
+            kanjiDesktopSaveBtn.Location = new Point(632, 15);
+            kanjiDesktopSaveBtn.Margin = new Padding(4);
+            kanjiDesktopSaveBtn.Name = "kanjiDesktopSaveBtn";
+            kanjiDesktopSaveBtn.Size = new Size(105, 71);
+            kanjiDesktopSaveBtn.TabIndex = 11;
+            kanjiDesktopSaveBtn.Text = "Save Kanji to Desktop";
+            kanjiDesktopSaveBtn.UseVisualStyleBackColor = false;
+            kanjiDesktopSaveBtn.Click += kanjiDesktopSaveBtn_Click;
             // 
             // TestYourselfButton
             // 
-            this.TestYourselfButton.BackColor = System.Drawing.Color.White;
-            this.TestYourselfButton.Location = new System.Drawing.Point(517, 12);
-            this.TestYourselfButton.Name = "TestYourselfButton";
-            this.TestYourselfButton.Size = new System.Drawing.Size(174, 57);
-            this.TestYourselfButton.TabIndex = 10;
-            this.TestYourselfButton.Text = "Test yourself";
-            this.TestYourselfButton.UseVisualStyleBackColor = false;
-            this.TestYourselfButton.Click += new System.EventHandler(this.TestYourselfButton_Click);
+            TestYourselfButton.BackColor = Color.White;
+            TestYourselfButton.Location = new Point(502, 0);
+            TestYourselfButton.Margin = new Padding(4);
+            TestYourselfButton.Name = "TestYourselfButton";
+            TestYourselfButton.Size = new Size(122, 101);
+            TestYourselfButton.TabIndex = 10;
+            TestYourselfButton.Text = "Test yourself";
+            TestYourselfButton.UseVisualStyleBackColor = false;
+            TestYourselfButton.Click += TestYourselfButton_Click;
             // 
             // rst_btn
             // 
-            this.rst_btn.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.rst_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
-            this.rst_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.rst_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rst_btn.ForeColor = System.Drawing.Color.Black;
-            this.rst_btn.Image = ((System.Drawing.Image)(resources.GetObject("rst_btn.Image")));
-            this.rst_btn.Location = new System.Drawing.Point(251, 0);
-            this.rst_btn.Name = "rst_btn";
-            this.rst_btn.Size = new System.Drawing.Size(75, 78);
-            this.rst_btn.TabIndex = 9;
-            this.rst_btn.Text = "Clear";
-            this.rst_btn.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.rst_btn.UseVisualStyleBackColor = false;
-            this.rst_btn.Click += new System.EventHandler(this.rst_btn_Click);
+            rst_btn.BackColor = SystemColors.ControlLight;
+            rst_btn.FlatAppearance.MouseDownBackColor = Color.Maroon;
+            rst_btn.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 0, 0);
+            rst_btn.FlatStyle = FlatStyle.Flat;
+            rst_btn.ForeColor = Color.Black;
+            rst_btn.Image = (Image)resources.GetObject("rst_btn.Image");
+            rst_btn.Location = new Point(293, 0);
+            rst_btn.Margin = new Padding(4);
+            rst_btn.Name = "rst_btn";
+            rst_btn.Size = new Size(88, 98);
+            rst_btn.TabIndex = 9;
+            rst_btn.Text = "Clear";
+            rst_btn.TextAlign = ContentAlignment.TopCenter;
+            rst_btn.UseVisualStyleBackColor = false;
+            rst_btn.Click += rst_btn_Click;
             // 
             // btn_kanji
             // 
-            this.btn_kanji.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btn_kanji.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
-            this.btn_kanji.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btn_kanji.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_kanji.ForeColor = System.Drawing.Color.Black;
-            this.btn_kanji.Image = ((System.Drawing.Image)(resources.GetObject("btn_kanji.Image")));
-            this.btn_kanji.Location = new System.Drawing.Point(89, 0);
-            this.btn_kanji.Name = "btn_kanji";
-            this.btn_kanji.Size = new System.Drawing.Size(75, 78);
-            this.btn_kanji.TabIndex = 8;
-            this.btn_kanji.Text = "Kanji";
-            this.btn_kanji.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_kanji.UseVisualStyleBackColor = false;
-            this.btn_kanji.Click += new System.EventHandler(this.btn_kanji_Click);
+            btn_kanji.BackColor = SystemColors.ControlLight;
+            btn_kanji.FlatAppearance.MouseDownBackColor = Color.Maroon;
+            btn_kanji.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 0, 0);
+            btn_kanji.FlatStyle = FlatStyle.Flat;
+            btn_kanji.ForeColor = Color.Black;
+            btn_kanji.Image = (Image)resources.GetObject("btn_kanji.Image");
+            btn_kanji.Location = new Point(104, 0);
+            btn_kanji.Margin = new Padding(4);
+            btn_kanji.Name = "btn_kanji";
+            btn_kanji.Size = new Size(88, 98);
+            btn_kanji.TabIndex = 8;
+            btn_kanji.Text = "Kanji";
+            btn_kanji.TextAlign = ContentAlignment.TopCenter;
+            btn_kanji.UseVisualStyleBackColor = false;
+            btn_kanji.Click += btn_kanji_Click;
             // 
             // btn_eraser
             // 
-            this.btn_eraser.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btn_eraser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
-            this.btn_eraser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btn_eraser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_eraser.ForeColor = System.Drawing.Color.Black;
-            this.btn_eraser.Image = ((System.Drawing.Image)(resources.GetObject("btn_eraser.Image")));
-            this.btn_eraser.Location = new System.Drawing.Point(170, 0);
-            this.btn_eraser.Name = "btn_eraser";
-            this.btn_eraser.Size = new System.Drawing.Size(75, 78);
-            this.btn_eraser.TabIndex = 7;
-            this.btn_eraser.Text = "Eraser";
-            this.btn_eraser.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_eraser.UseVisualStyleBackColor = false;
-            this.btn_eraser.Click += new System.EventHandler(this.btn_eraser_Click);
+            btn_eraser.BackColor = SystemColors.ControlLight;
+            btn_eraser.FlatAppearance.MouseDownBackColor = Color.Maroon;
+            btn_eraser.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 0, 0);
+            btn_eraser.FlatStyle = FlatStyle.Flat;
+            btn_eraser.ForeColor = Color.Black;
+            btn_eraser.Image = (Image)resources.GetObject("btn_eraser.Image");
+            btn_eraser.Location = new Point(198, 0);
+            btn_eraser.Margin = new Padding(4);
+            btn_eraser.Name = "btn_eraser";
+            btn_eraser.Size = new Size(88, 98);
+            btn_eraser.TabIndex = 7;
+            btn_eraser.Text = "Eraser";
+            btn_eraser.TextAlign = ContentAlignment.TopCenter;
+            btn_eraser.UseVisualStyleBackColor = false;
+            btn_eraser.Click += btn_eraser_Click;
             // 
             // btn_pencil
             // 
-            this.btn_pencil.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btn_pencil.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
-            this.btn_pencil.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btn_pencil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_pencil.ForeColor = System.Drawing.Color.Black;
-            this.btn_pencil.Image = ((System.Drawing.Image)(resources.GetObject("btn_pencil.Image")));
-            this.btn_pencil.Location = new System.Drawing.Point(8, 0);
-            this.btn_pencil.Name = "btn_pencil";
-            this.btn_pencil.Size = new System.Drawing.Size(75, 78);
-            this.btn_pencil.TabIndex = 6;
-            this.btn_pencil.Text = "Pencil";
-            this.btn_pencil.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_pencil.UseVisualStyleBackColor = false;
-            this.btn_pencil.Click += new System.EventHandler(this.btn_pencil_Click);
+            btn_pencil.BackColor = SystemColors.ControlLight;
+            btn_pencil.FlatAppearance.MouseDownBackColor = Color.Maroon;
+            btn_pencil.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 0, 0);
+            btn_pencil.FlatStyle = FlatStyle.Flat;
+            btn_pencil.ForeColor = Color.Black;
+            btn_pencil.Image = (Image)resources.GetObject("btn_pencil.Image");
+            btn_pencil.Location = new Point(9, 0);
+            btn_pencil.Margin = new Padding(4);
+            btn_pencil.Name = "btn_pencil";
+            btn_pencil.Size = new Size(88, 98);
+            btn_pencil.TabIndex = 6;
+            btn_pencil.Text = "Pencil";
+            btn_pencil.TextAlign = ContentAlignment.TopCenter;
+            btn_pencil.UseVisualStyleBackColor = false;
+            btn_pencil.Click += btn_pencil_Click;
             // 
             // SaveButton
             // 
-            this.SaveButton.BackColor = System.Drawing.Color.White;
-            this.SaveButton.Location = new System.Drawing.Point(390, 12);
-            this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(90, 57);
-            this.SaveButton.TabIndex = 3;
-            this.SaveButton.Text = "Save as jpg";
-            this.SaveButton.UseVisualStyleBackColor = false;
-            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            SaveButton.BackColor = Color.White;
+            SaveButton.Location = new Point(389, 15);
+            SaveButton.Margin = new Padding(4);
+            SaveButton.Name = "SaveButton";
+            SaveButton.Size = new Size(105, 71);
+            SaveButton.TabIndex = 3;
+            SaveButton.Text = "Save as jpg";
+            SaveButton.UseVisualStyleBackColor = false;
+            SaveButton.Click += SaveButton_Click;
             // 
             // pic
             // 
-            this.pic.BackColor = System.Drawing.Color.White;
-            this.pic.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pic.Location = new System.Drawing.Point(0, 81);
-            this.pic.Name = "pic";
-            this.pic.Size = new System.Drawing.Size(872, 442);
-            this.pic.TabIndex = 2;
-            this.pic.TabStop = false;
-            this.pic.Click += new System.EventHandler(this.pic_Click);
-            this.pic.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pic_MouseDown);
-            this.pic.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pic_MouseMove);
-            this.pic.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pic_MouseUp);
+            pic.BackColor = Color.White;
+            pic.Dock = DockStyle.Fill;
+            pic.Location = new Point(0, 101);
+            pic.Margin = new Padding(4);
+            pic.Name = "pic";
+            pic.Size = new Size(1017, 553);
+            pic.TabIndex = 2;
+            pic.TabStop = false;
+            pic.Click += pic_Click;
+            pic.MouseDown += pic_MouseDown;
+            pic.MouseMove += pic_MouseMove;
+            pic.MouseUp += pic_MouseUp;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(872, 523);
-            this.Controls.Add(this.pic);
-            this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Form1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Quintin Kanji Program";
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1017, 654);
+            Controls.Add(pic);
+            Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Margin = new Padding(4);
+            Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Quintin Kanji Program";
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pic).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -187,5 +223,7 @@
         private Button btn_pencil;
         private Button rst_btn;
         private Button TestYourselfButton;
+        private Button kanjiDesktopSaveBtn;
+        private Button openKanjiBtn;
     }
 }
