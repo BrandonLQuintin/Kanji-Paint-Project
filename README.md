@@ -1,5 +1,5 @@
 # Quintin Kanji Paint Project
-![Kanji Program Photo](https://user-images.githubusercontent.com/104369655/232264608-bd626d06-e0a7-459b-b261-5081f817e903.PNG)
+![Kanji Program Photo 2](https://user-images.githubusercontent.com/104369655/232264637-4c836083-c946-45ed-9ca7-176dbeec5db9.PNG)
 
 INFO
 ------------
@@ -28,8 +28,8 @@ A year ago, I made this as a final project for a programming class, and I begun 
 
 Now I added save study sets so that the user can study the same kanji later.
 
+![Kanji Program Photo](https://user-images.githubusercontent.com/104369655/232264608-bd626d06-e0a7-459b-b261-5081f817e903.PNG)
 
 
-![Kanji Program Photo 2](https://user-images.githubusercontent.com/104369655/232264637-4c836083-c946-45ed-9ca7-176dbeec5db9.PNG)
 
 
