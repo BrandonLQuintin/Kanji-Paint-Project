@@ -21,7 +21,7 @@ namespace Kanji_Paint_Project
 
         }
 
-        public void sortDictionary(Dictionary<string, string> inputDictionary)
+        public void sortDictionary(Dictionary<string, string> inputDictionary) // Big O(n)
         {
 
             // This is from the user "caryden" on https://stackoverflow.com/questions/289/how-do-you-sort-a-dictionary-by-value
@@ -34,7 +34,7 @@ namespace Kanji_Paint_Project
         }
 
 
-        public void sortDictionaryAscend(Dictionary<string, string> inputDictionary)
+        public void sortDictionaryAscend(Dictionary<string, string> inputDictionary) // Big O(n)
         {
             // This is from the user "caryden" on https://stackoverflow.com/questions/289/how-do-you-sort-a-dictionary-by-value
             var sortedDict = from entry in inputDictionary orderby int.Parse(entry.Value) ascending select entry;
@@ -49,7 +49,7 @@ namespace Kanji_Paint_Project
         Dictionary<string, string> kanjiText = new Dictionary<string, string>();
         Dictionary<string, string> kanjiStrokes = new Dictionary<string, string>();
         Dictionary<string, string> kanjiWordCount = new Dictionary<string, string>();
-        public void openFiles(List<string> list)
+        public void openFiles(List<string> list) // Big O(n)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog()) // The OpenFileDialog was made by ChatGPT.
             {
@@ -89,7 +89,7 @@ namespace Kanji_Paint_Project
             }
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        private void Form2_Load(object sender, EventArgs e) // Big O(n)
         {
             List<string> lines = new List<string>();
 
@@ -97,7 +97,7 @@ namespace Kanji_Paint_Project
 
         }
         string pictureBoxJpg = "";
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e) // Big O(1)
         {
             if (listBox1.SelectedIndex != -1)
             {
