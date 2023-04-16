@@ -49,7 +49,9 @@ namespace Kanji_Paint_Project
         Dictionary<string, string> kanjiText = new Dictionary<string, string>();
         Dictionary<string, string> kanjiStrokes = new Dictionary<string, string>();
         Dictionary<string, string> kanjiWordCount = new Dictionary<string, string>();
-        public void openFiles(List<string> list) // Big O(n)
+        public void openFiles(List<string> list) // Big O(n) - When I measured it,
+                                                 // the runtime of this function took around 135 milliseconds on my school laptop
+                                                 // to execute about 10 files and 10 jpg images
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog()) // The OpenFileDialog was made by ChatGPT.
             {
