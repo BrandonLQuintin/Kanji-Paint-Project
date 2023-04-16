@@ -16,11 +16,13 @@ Wanted to take notes on kanji?
 This program can help you!
 
 FEATURES
+----------
 Draw Kanji and test yourself on each stroke order!
 Save a photo of the Kanji you drew!
 Save a Kanji (along with a picture) so that you can review it later!
 
 Try it out!
+-------------
 Click "Open Kanji Sets
 Go to the included folder "Kanji"
 Select everything with "CTRL + A"
