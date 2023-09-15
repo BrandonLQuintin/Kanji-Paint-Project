@@ -71,7 +71,9 @@ namespace Kanji_Paint_Project
 
 
                         list.Add(parsedKanji[1]);
-                        kanjiPhoto.Add(parsedKanji[1], parsedKanji[0].Trim('"')); // 1 is the name of kanji 0 is the jpg location
+                        // OLD CODE REPLACED BY NEW CODE BELOW
+                        // kanjiPhoto.Add(parsedKanji[1], parsedKanji[0].Trim('"')); // 1 is the name of kanji 0 is the jpg location
+                        kanjiPhoto.Add(parsedKanji[1], openFileDialog.FileName.Substring(0, openFileDialog.FileName.Length - 4) + ".jpg");
                         kanjiText.Add(parsedKanji[1], parsedKanji[2].Trim('"')); // 2 is the kanji description
                         kanjiStrokes.Add(parsedKanji[1], parsedKanji[3].Trim('"')); // 3 is the stroke amount
 
